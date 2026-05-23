@@ -202,9 +202,9 @@ wwwroot/
 # Screenshot-uri
 
 ## Screenshot 1 — Comanda creata
-![Screenshot 1](docs/screenshots/screenshot1.png)
+![Screenshot 1](docs/screenshots/Screenshot1.png)
 ## Screenshot 2 — Tranzitii de stare
-![Screenshot 2](docs/screenshots/screenshot2.png)
+![Screenshot 2](docs/screenshots/Screenshot2.png)
 Comanda trece prin:
 - Pending
 - Confirmed
@@ -213,11 +213,11 @@ Comanda trece prin:
 - Delivered
 
 ## Screenshot 3 — Tranzitie invalida
-![Screenshot 3](docs/screenshots/screenshot3.png)
+![Screenshot 3](docs/screenshots/Screenshot3.png)
 Mesaj de eroare la încercarea unui Cancel invalid.
 
 ## Screenshot 4 — Validare esuata
-![Screenshot 4](docs/screenshots/screenshot4.png)
+![Screenshot 4](docs/screenshots/Screenshot4.png)
 Exemplu de eroare returnata de pipeline-ul Chain of Responsibility.
 
 ---
