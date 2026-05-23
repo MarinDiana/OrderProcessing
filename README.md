@@ -2,17 +2,17 @@
 
 ## Descriere
 
-Aplicație ASP.NET Core Web API + SPA vanilla JavaScript care demonstrează pattern-urile:
+Aplicatie ASP.NET Core Web API + SPA vanilla JavaScript care demonstreaza pattern-urile:
 
 - Chain of Responsibility
 - State Pattern
 
-Aplicația permite:
+Aplicatia permite:
 - creare comenzi
 - validare pipeline
-- tranziții de stare
+- tranzitii de stare
 - vizualizare state machine
-- afișare istoric tranziții
+- afisare istoric tranzitii
 
 ---
 
@@ -28,7 +28,7 @@ PriceValidation --> FraudDetection
 FraudDetection --> AgeVerification
 ```
 
-Primul handler care detectează o problemă oprește pipeline-ul și returnează:
+Primul handler care detecteaza o problema opreste pipeline-ul si returneaza:
 
 ```text
 ValidationResult.Failed()
@@ -45,7 +45,7 @@ Handler-ele implementate:
 
 # Pattern 2 — State Pattern
 
-Comanda trece prin următoarele stări:
+Comanda trece prin urmatoarele stari:
 
 ```mermaid
 stateDiagram-v2
@@ -67,7 +67,7 @@ Delivered --> [*]
 Cancelled --> [*]
 ```
 
-Stările implementate:
+Starile implementate:
 
 - PendingState
 - ConfirmedState
@@ -78,9 +78,9 @@ Stările implementate:
 
 ---
 
-# Diagramă de secvență
+# Diagrama de secventa
 
-Flux complet de procesare comandă:
+Flux complet de procesare comanda:
 
 ```mermaid
 sequenceDiagram
@@ -123,7 +123,7 @@ OrderService->>Order: Deliver()
 
 ---
 
-# Diagramă de clase
+# Diagrama de clase
 
 ```mermaid
 classDiagram
@@ -171,7 +171,7 @@ IOrderValidationHandler <|.. AgeVerificationHandler
 
 ---
 
-# Structură proiect
+# Structura proiect
 
 ```text
 Domain/
@@ -188,22 +188,22 @@ wwwroot/
 
 | Method | Endpoint | Descriere |
 |---|---|---|
-| POST | /orders | Creează comandă |
+| POST | /orders | Creeaza comanda |
 | POST | /orders/{id}/pay | Pending → Confirmed |
 | POST | /orders/{id}/process | Confirmed → Processing |
 | POST | /orders/{id}/ship | Processing → Shipped |
 | POST | /orders/{id}/deliver | Shipped → Delivered |
-| POST | /orders/{id}/cancel | Cancel comandă |
-| GET | /orders/{id} | Detalii comandă |
+| POST | /orders/{id}/cancel | Cancel comanda |
+| GET | /orders/{id} | Detalii comanda |
 | GET | /orders | Toate comenzile |
 
 ---
 
 # Screenshot-uri
 
-## Screenshot 1 — Comandă creată
+## Screenshot 1 — Comanda creata
 ![Screenshot 1](docs/screenshots/screenshot1.png)
-## Screenshot 2 — Tranziții de stare
+## Screenshot 2 — Tranzitii de stare
 ![Screenshot 2](docs/screenshots/screenshot2.png)
 Comanda trece prin:
 - Pending
@@ -212,13 +212,13 @@ Comanda trece prin:
 - Shipped
 - Delivered
 
-## Screenshot 3 — Tranziție invalidă
+## Screenshot 3 — Tranzitie invalida
 ![Screenshot 3](docs/screenshots/screenshot3.png)
 Mesaj de eroare la încercarea unui Cancel invalid.
 
-## Screenshot 4 — Validare eșuată
+## Screenshot 4 — Validare esuata
 ![Screenshot 4](docs/screenshots/screenshot4.png)
-Exemplu de eroare returnată de pipeline-ul Chain of Responsibility.
+Exemplu de eroare returnata de pipeline-ul Chain of Responsibility.
 
 ---
 
