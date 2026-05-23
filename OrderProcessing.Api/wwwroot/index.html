@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderProcessing</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <h1>OrderProcessing — Lab 4</h1>
+
+                <button id="newOrderButton">
+                    + Comandă nouă
+                </button>
+            </div>
+
+            <div class="orders-section">
+                <h2>Orders</h2>
+
+                <div id="ordersList"></div>
+            </div>
+
+        </aside>
+
+        <main class="content">
+
+            <section class="details-section">
+
+                <h2>Order Details</h2>
+
+                <div id="orderDetails">
+
+                    <p>Selectează o comandă</p>
+
+                </div>
+
+            </section>
+
+            <section class="diagram-section">
+
+                <h2>State Diagram</h2>
+
+                <div id="stateDiagram"></div>
+
+            </section>
+
+            <section class="actions-section">
+
+                <h2>Actions</h2>
+
+                <div class="actions">
+
+                    <button id="payButton">Pay</button>
+
+                    <button id="processButton">Process</button>
+
+                    <button id="shipButton">Ship</button>
+
+                    <button id="deliverButton">Deliver</button>
+
+                    <button id="cancelButton">Cancel</button>
+
+                </div>
+
+            </section>
+
+            <section class="history-section">
+
+                <h2>History</h2>
+
+                <div id="historyTimeline"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <div id="toastContainer"></div>
+
+    <div id="modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <h2>Comandă nouă</h2>
+
+            <form id="createOrderForm">
+
+                <input type="text"
+                       id="customerName"
+                       placeholder="Nume client"
+                       required>
+
+                <input type="email"
+                       id="customerEmail"
+                       placeholder="Email"
+                       required>
+
+                <input type="number"
+                       id="customerAge"
+                       placeholder="Vârstă"
+                       required>
+
+                <label class="checkbox">
+                    <input type="checkbox" id="isTrusted">
+                    Trusted Customer
+                </label>
+
+                <div id="itemsContainer">
+
+                    <div class="order-item">
+
+                        <select class="productSelect">
+                            <option value="P001">Laptop</option>
+                            <option value="P002">Telefon</option>
+                            <option value="P003">Tableta</option>
+                            <option value="P999">Monitor</option>
+                        </select>
+
+                        <input type="number"
+                               class="quantityInput"
+                               placeholder="Cantitate"
+                               value="1"
+                               min="1"
+                               required>
+
+                    </div>
+
+                </div>
+
+                <button type="button"
+                        id="addItemButton">
+                    + Adauga produs
+                </button>
+
+                <button type="submit">
+                    Creează comandă
+                </button>
+
+            </form>
+
+            <button id="closeModalButton">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
